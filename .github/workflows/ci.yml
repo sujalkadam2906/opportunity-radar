@@ -19,25 +19,25 @@ jobs:
           cache-dependency-path: 'opportunity-radar/package-lock.json'
 
       - name: Install Dependencies
-        working-directory: ./opportunity-radar
+        working-directory: .
         run: npm ci
 
       - name: TypeScript Typecheck
-        working-directory: ./opportunity-radar
+        working-directory: .
         run: npm run typecheck
 
       - name: ESLint Check
-        working-directory: ./opportunity-radar
+        working-directory: .
         run: npm run lint
 
       - name: Format Check
-        working-directory: ./opportunity-radar
+        working-directory: .
         run: npm run format:check
 
       - name: Unit & Component Tests
-        working-directory: ./opportunity-radar
+        working-directory: .
         run: npm run test
 
       - name: Production Build
-        working-directory: ./opportunity-radar
+        working-directory: .
         run: npm run build
