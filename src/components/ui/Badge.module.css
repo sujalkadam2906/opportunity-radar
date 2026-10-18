@@ -1,0 +1,74 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: inherit;
+  font-weight: var(--font-medium);
+  font-size: var(--text-xs);
+  line-height: 1;
+  padding: 3px 7px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+}
+
+/* Variants */
+.default {
+  background-color: var(--color-surface-subtle);
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
+}
+
+.brand {
+  background-color: var(--color-brand-subtle);
+  color: var(--color-brand-primary);
+  border-color: var(--color-brand-border);
+}
+
+.fresh {
+  background-color: var(--color-fresh-bg);
+  color: var(--color-fresh-text);
+  border-color: var(--color-fresh-border);
+  font-weight: var(--font-semibold);
+}
+
+.applied {
+  background-color: var(--color-status-applied-bg);
+  color: var(--color-status-applied-text);
+}
+
+.interview {
+  background-color: var(--color-status-interview-bg);
+  color: var(--color-status-interview-text);
+}
+
+.offer {
+  background-color: var(--color-status-offer-bg);
+  color: var(--color-status-offer-text);
+}
+
+.rejected {
+  background-color: var(--color-status-rejected-bg);
+  color: var(--color-status-rejected-text);
+}
+
+.scoreHigh {
+  background-color: #ECFDF5;
+  color: #047857;
+  border-color: #A7F3D0;
+  font-weight: var(--font-semibold);
+}
+
+.scoreMid {
+  background-color: #FFFBEB;
+  color: #B45309;
+  border-color: #FDE68A;
+  font-weight: var(--font-semibold);
+}
+
+.scoreLow {
+  background-color: var(--color-surface-subtle);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}

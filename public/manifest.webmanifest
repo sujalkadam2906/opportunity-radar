@@ -1,0 +1,17 @@
+{
+  "name": "Opportunity Radar",
+  "short_name": "OppRadar",
+  "description": "Find better-fit opportunities before they go stale. Early-career tech discovery in India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8FAFB",
+  "theme_color": "#0F766E",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
