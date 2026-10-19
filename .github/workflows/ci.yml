@@ -1,3 +1,4 @@
+
 name: CI Quality Pipeline
 
 on:
@@ -9,35 +10,31 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:
           node-version: 22.x
-          cache: 'npm'
-          cache-dependency-path: 'opportunity-radar/package-lock.json'
+          cache: npm
+          cache-dependency-path: package-lock.json
 
       - name: Install Dependencies
-        working-directory: .
         run: npm ci
 
       - name: TypeScript Typecheck
-        working-directory: .
         run: npm run typecheck
 
       - name: ESLint Check
-        working-directory: .
         run: npm run lint
 
       - name: Format Check
-        working-directory: .
         run: npm run format:check
 
       - name: Unit & Component Tests
-        working-directory: .
         run: npm run test
 
       - name: Production Build
-        working-directory: .
         run: npm run build
