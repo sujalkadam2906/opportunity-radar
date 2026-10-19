@@ -26,7 +26,8 @@ export interface DiscoverPageProps {
 
 export function DiscoverPage({ onOpenPreferences }: DiscoverPageProps) {
   const outlet = useOutletContext<{ onOpenPreferences?: () => void }>();
-  const handleOpenPreferences = onOpenPreferences || outlet?.onOpenPreferences || (() => {});
+  const handleOpenPreferences =
+    onOpenPreferences || outlet?.onOpenPreferences || (() => {});
 
   const {
     filters,
@@ -105,10 +106,7 @@ export function DiscoverPage({ onOpenPreferences }: DiscoverPageProps) {
   return (
     <div className={styles.discoverContainer}>
       {/* Search Input */}
-      <SearchBar
-        query={filters.query}
-        onSearchChange={setQuery}
-      />
+      <SearchBar query={filters.query} onSearchChange={setQuery} />
 
       {/* Filter Controls & Sort Bar */}
       <FilterBar
@@ -138,7 +136,8 @@ export function DiscoverPage({ onOpenPreferences }: DiscoverPageProps) {
       {/* Results Header */}
       <div className={styles.resultsHeader}>
         <div className={styles.resultsCount} aria-live="polite">
-          Found <span className={styles.highlight}>{filteredJobs.length}</span> matching opportunities
+          Found <span className={styles.highlight}>{filteredJobs.length}</span> matching
+          opportunities
         </div>
       </div>
 

@@ -13,7 +13,8 @@ export const DEMO_PREFERENCES: UserPreferences = {
 const NOW = new Date('2026-10-18T10:00:00.000Z').getTime();
 
 const hoursAgo = (h: number): string => new Date(NOW - h * 60 * 60 * 1000).toISOString();
-const daysAgo = (d: number): string => new Date(NOW - d * 24 * 60 * 60 * 1000).toISOString();
+const daysAgo = (d: number): string =>
+  new Date(NOW - d * 24 * 60 * 60 * 1000).toISOString();
 
 export const DEMO_JOBS: JobListing[] = [
   {
@@ -64,7 +65,8 @@ export const DEMO_JOBS: JobListing[] = [
     postedAt: hoursAgo(4), // 4 hours ago -> Fresh today!
     isFresh: true,
     isFeatured: true,
-    demoNotice: 'Demonstration listing for portfolio testing — not a genuine external vacancy.',
+    demoNotice:
+      'Demonstration listing for portfolio testing — not a genuine external vacancy.',
   },
   {
     id: 'opp-in-002',
@@ -110,7 +112,8 @@ export const DEMO_JOBS: JobListing[] = [
     ],
     postedAt: hoursAgo(14), // 14 hours ago -> Fresh today!
     isFresh: true,
-    demoNotice: 'Demonstration listing for portfolio testing — not a genuine external vacancy.',
+    demoNotice:
+      'Demonstration listing for portfolio testing — not a genuine external vacancy.',
   },
   {
     id: 'opp-in-003',
@@ -157,7 +160,8 @@ export const DEMO_JOBS: JobListing[] = [
     postedAt: hoursAgo(22), // 22 hours ago -> Fresh today!
     isFresh: true,
     isFeatured: true,
-    demoNotice: 'Demonstration listing for portfolio testing — not a genuine external vacancy.',
+    demoNotice:
+      'Demonstration listing for portfolio testing — not a genuine external vacancy.',
   },
   {
     id: 'opp-in-004',
@@ -203,7 +207,8 @@ export const DEMO_JOBS: JobListing[] = [
     ],
     postedAt: daysAgo(1), // 1 day ago -> 24h-48h fresh
     isFresh: true,
-    demoNotice: 'Demonstration listing for portfolio testing — not a genuine external vacancy.',
+    demoNotice:
+      'Demonstration listing for portfolio testing — not a genuine external vacancy.',
   },
   {
     id: 'opp-in-005',
@@ -249,7 +254,8 @@ export const DEMO_JOBS: JobListing[] = [
     ],
     postedAt: daysAgo(2), // 2 days ago
     isFresh: true,
-    demoNotice: 'Demonstration listing for portfolio testing — not a genuine external vacancy.',
+    demoNotice:
+      'Demonstration listing for portfolio testing — not a genuine external vacancy.',
   },
   {
     id: 'opp-in-006',
@@ -295,7 +301,8 @@ export const DEMO_JOBS: JobListing[] = [
     ],
     postedAt: daysAgo(3),
     isFresh: false,
-    demoNotice: 'Demonstration listing for portfolio testing — not a genuine external vacancy.',
+    demoNotice:
+      'Demonstration listing for portfolio testing — not a genuine external vacancy.',
   },
   {
     id: 'opp-in-007',
@@ -343,7 +350,8 @@ export const DEMO_JOBS: JobListing[] = [
     postedAt: daysAgo(4),
     isFresh: false,
     isFeatured: true,
-    demoNotice: 'Demonstration listing for portfolio testing — not a genuine external vacancy.',
+    demoNotice:
+      'Demonstration listing for portfolio testing — not a genuine external vacancy.',
   },
   {
     id: 'opp-in-008',
@@ -389,7 +397,8 @@ export const DEMO_JOBS: JobListing[] = [
     ],
     postedAt: daysAgo(5),
     isFresh: false,
-    demoNotice: 'Demonstration listing for portfolio testing — not a genuine external vacancy.',
+    demoNotice:
+      'Demonstration listing for portfolio testing — not a genuine external vacancy.',
   },
   {
     id: 'opp-in-009',
@@ -434,7 +443,8 @@ export const DEMO_JOBS: JobListing[] = [
     ],
     postedAt: daysAgo(6),
     isFresh: false,
-    demoNotice: 'Demonstration listing for portfolio testing — not a genuine external vacancy.',
+    demoNotice:
+      'Demonstration listing for portfolio testing — not a genuine external vacancy.',
   },
   {
     id: 'opp-in-010',
@@ -478,6 +488,7 @@ export const DEMO_JOBS: JobListing[] = [
     ],
     postedAt: daysAgo(7),
     isFresh: false,
-    demoNotice: 'Demonstration listing for portfolio testing — not a genuine external vacancy.',
+    demoNotice:
+      'Demonstration listing for portfolio testing — not a genuine external vacancy.',
   },
 ];

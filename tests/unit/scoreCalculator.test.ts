@@ -1,5 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { calculateFitScore, normalizeSkill } from '../../src/features/jobs/utils/scoreCalculator';
+import {
+  calculateFitScore,
+  normalizeSkill,
+} from '../../src/features/jobs/utils/scoreCalculator';
 import { JobListing, UserPreferences } from '../../src/types';
 
 describe('scoreCalculator - Deterministic Match Engine', () => {

@@ -147,9 +147,7 @@ export function ApplicationTable({
         </div>
         <div className={styles.statCard}>
           <span className={styles.statLabel}>Offers</span>
-          <span className={`${styles.statValue} ${styles.offerStat}`}>
-            {stats.offer}
-          </span>
+          <span className={`${styles.statValue} ${styles.offerStat}`}>{stats.offer}</span>
         </div>
         <div className={styles.statCard}>
           <span className={styles.statLabel}>Not Selected</span>
@@ -161,7 +159,11 @@ export function ApplicationTable({
 
       {/* Toolbar */}
       <div className={styles.toolbar}>
-        <div className={styles.tabs} role="tablist" aria-label="Filter applications by stage">
+        <div
+          className={styles.tabs}
+          role="tablist"
+          aria-label="Filter applications by stage"
+        >
           {[
             { id: 'all', label: `All (${stats.total})` },
             { id: 'applied', label: `Applied (${stats.applied})` },
@@ -198,7 +200,9 @@ export function ApplicationTable({
               <th className={styles.th}>Current Stage</th>
               <th className={styles.th}>Applied Date</th>
               <th className={styles.th}>Personal Notes</th>
-              <th className={styles.th} style={{ textAlign: 'right' }}>Actions</th>
+              <th className={styles.th} style={{ textAlign: 'right' }}>
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -260,7 +264,11 @@ export function ApplicationTable({
                       <span className={styles.notesSnippet}>
                         {app.notes || <em>No notes added. Click to add...</em>}
                       </span>
-                      <Edit3 size={12} color="var(--color-text-muted)" aria-hidden="true" />
+                      <Edit3
+                        size={12}
+                        color="var(--color-text-muted)"
+                        aria-hidden="true"
+                      />
                     </div>
                   )}
                 </td>

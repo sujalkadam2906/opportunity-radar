@@ -1,5 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { filterAndSortJobs, normalizeText } from '../../src/features/jobs/utils/searchFilter';
+import {
+  filterAndSortJobs,
+  normalizeText,
+} from '../../src/features/jobs/utils/searchFilter';
 import { DEMO_JOBS, DEMO_PREFERENCES } from '../../src/data/demoJobs';
 import { FilterState } from '../../src/types';
 
@@ -34,8 +37,7 @@ describe('searchFilter - Normalization, Filtering and Sorting Pipeline', () => {
     expect(titleResults.length).toBeGreaterThan(0);
     titleResults.forEach((j) => {
       const match =
-        j.title.toLowerCase().includes('intern') ||
-        j.experienceLevel === 'internship';
+        j.title.toLowerCase().includes('intern') || j.experienceLevel === 'internship';
       expect(match).toBe(true);
     });
 
@@ -102,8 +104,7 @@ describe('searchFilter - Normalization, Filtering and Sorting Pipeline', () => {
     );
     expect(highSalaryJobs.length).toBeGreaterThan(0);
     highSalaryJobs.forEach((j) => {
-      const maxAnnual =
-        j.salary.period === 'monthly' ? j.salary.max * 12 : j.salary.max;
+      const maxAnnual = j.salary.period === 'monthly' ? j.salary.max * 12 : j.salary.max;
       expect(maxAnnual).toBeGreaterThanOrEqual(1000000);
     });
   });

@@ -7,9 +7,7 @@ describe('SearchBar Component', () => {
   it('renders input with placeholder', () => {
     render(<SearchBar query="" onSearchChange={vi.fn()} />);
 
-    expect(
-      screen.getByPlaceholderText(/Search by title, skills/i)
-    ).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/Search by title, skills/i)).toBeInTheDocument();
   });
 
   it('debounces user typing before propagating onSearchChange', () => {

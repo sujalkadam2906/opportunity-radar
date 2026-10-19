@@ -1,11 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import {
-  Compass,
-  Bookmark,
-  Briefcase,
-  SlidersHorizontal,
-  Radar,
-} from 'lucide-react';
+import { Compass, Bookmark, Briefcase, SlidersHorizontal, Radar } from 'lucide-react';
 import { StreamStatusPill } from '../feedback/StreamStatusPill';
 import { StreamConnectionStatus } from '../../types';
 import { Button } from '../ui/Button';
@@ -84,7 +78,10 @@ export function AppHeader({
         </nav>
 
         <div className={styles.rightSection}>
-          <span className={styles.demoPill} title="This app uses explicitly labelled sample data for portfolio demonstration">
+          <span
+            className={styles.demoPill}
+            title="This app uses explicitly labelled sample data for portfolio demonstration"
+          >
             Demo Dataset
           </span>
           <Button

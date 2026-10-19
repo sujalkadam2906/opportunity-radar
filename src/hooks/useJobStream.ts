@@ -1,9 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
-import {
-  StreamConnectionStatus,
-  WebSocketStreamEvent,
-} from '../types';
+import { StreamConnectionStatus, WebSocketStreamEvent } from '../types';
 import { jobService } from '../services/jobService';
 import { useToast } from '../components/feedback/useToast';
 

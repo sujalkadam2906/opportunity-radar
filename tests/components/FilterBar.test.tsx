@@ -101,7 +101,9 @@ describe('FilterBar Component', () => {
       />
     );
 
-    expect(screen.queryByRole('button', { name: /Reset Filters/i })).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: /Reset Filters/i })
+    ).not.toBeInTheDocument();
 
     rerender(
       <FilterBar

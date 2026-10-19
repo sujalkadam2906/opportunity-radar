@@ -99,11 +99,9 @@ export function useApplications() {
       location: job.location,
       status: newStatus,
       appliedDate:
-        newStatus === 'applied' && !existing?.appliedDate
-          ? today
-          : existing?.appliedDate,
+        newStatus === 'applied' && !existing?.appliedDate ? today : existing?.appliedDate,
       interviewDate: existing?.interviewDate,
-      notes: customNotes !== undefined ? customNotes : (existing?.notes || ''),
+      notes: customNotes !== undefined ? customNotes : existing?.notes || '',
       updatedAt: now,
       createdAt: existing?.createdAt || now,
     };

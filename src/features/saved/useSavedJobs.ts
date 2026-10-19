@@ -29,7 +29,10 @@ export function useSavedJobs() {
         savedAt: new Date().toISOString(),
         jobSnapshot: job,
       };
-      queryClient.setQueryData<SavedJobRecord[]>(SAVED_JOBS_KEY, [newRecord, ...previous]);
+      queryClient.setQueryData<SavedJobRecord[]>(SAVED_JOBS_KEY, [
+        newRecord,
+        ...previous,
+      ]);
       return { previous };
     },
     onError: (_err, job, context) => {
@@ -39,7 +42,10 @@ export function useSavedJobs() {
       error('Failed to save job', `Could not bookmark ${job.title}. Changes reverted.`);
     },
     onSuccess: (job) => {
-      success('Job Bookmarked', `${job.title} at ${job.company.name} saved to your list.`);
+      success(
+        'Job Bookmarked',
+        `${job.title} at ${job.company.name} saved to your list.`
+      );
     },
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: SAVED_JOBS_KEY });

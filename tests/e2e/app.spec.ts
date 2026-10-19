@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Opportunity Radar - Complete User Journeys', () => {
-  test('Journey 1: Discovery, Search, and URL Multi-Faceted Filtering', async ({ page }) => {
+  test('Journey 1: Discovery, Search, and URL Multi-Faceted Filtering', async ({
+    page,
+  }) => {
     // 1. Visit root page
     await page.goto('/');
 
@@ -30,13 +32,17 @@ test.describe('Opportunity Radar - Complete User Journeys', () => {
     await expect(page.getByText(/Mode: remote/i)).toBeVisible();
 
     // 6. Reset filters
-    const resetBtn = page.getByRole('button', { name: /Reset All Filters|Reset Filters/i });
+    const resetBtn = page.getByRole('button', {
+      name: /Reset All Filters|Reset Filters/i,
+    });
     if (await resetBtn.isVisible()) {
       await resetBtn.click();
     }
   });
 
-  test('Journey 2: Inspect Job Details, Explainable Fit Score, and Save Bookmark', async ({ page }) => {
+  test('Journey 2: Inspect Job Details, Explainable Fit Score, and Save Bookmark', async ({
+    page,
+  }) => {
     await page.goto('/');
 
     // Locate the first job card and click it
@@ -45,8 +51,14 @@ test.describe('Opportunity Radar - Complete User Journeys', () => {
     await firstCard.click();
 
     // Locate active detail container (either desktop article or mobile drawer)
-    const detailContainer = page.locator('article[aria-labelledby="job-detail-title"]:visible, [role="dialog"]:visible').first();
-    await expect(detailContainer.getByRole('heading', { level: 2 }).first()).toBeVisible();
+    const detailContainer = page
+      .locator(
+        'article[aria-labelledby="job-detail-title"]:visible, [role="dialog"]:visible'
+      )
+      .first();
+    await expect(
+      detailContainer.getByRole('heading', { level: 2 }).first()
+    ).toBeVisible();
     await expect(detailContainer.getByText('Candidate Fit Heuristic')).toBeVisible();
     await expect(detailContainer.getByText('Skills Overlap')).toBeVisible();
     await expect(detailContainer.getByText('Key Responsibilities')).toBeVisible();
@@ -69,7 +81,9 @@ test.describe('Opportunity Radar - Complete User Journeys', () => {
     await firstCard.click();
 
     // Change stage to "Applied" using visible selector (works across desktop & mobile drawer)
-    const stageSelect = page.locator('select[aria-label="Change application status"]:visible').first();
+    const stageSelect = page
+      .locator('select[aria-label="Change application status"]:visible')
+      .first();
     await stageSelect.selectOption('applied');
 
     // Wait for status update toast

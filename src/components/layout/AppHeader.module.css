@@ -121,15 +121,16 @@
   font-size: var(--text-xs);
   padding: 3px 8px;
   border-radius: var(--radius-full);
-  background-color: #FEF3C7;
-  color: #92400E;
+  background-color: #fef3c7;
+  color: #92400e;
   font-weight: var(--font-medium);
-  border: 1px solid #FDE68A;
+  border: 1px solid #fde68a;
   white-space: nowrap;
 }
 
 @media (max-width: 860px) {
-  .brandTagline, .demoPill {
+  .brandTagline,
+  .demoPill {
     display: none;
   }
   .inner {

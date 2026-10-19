@@ -106,7 +106,9 @@ export function JobFitExplainer({ fit, onOpenPreferences }: JobFitExplainerProps
         </div>
       </div>
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div
+        style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+      >
         <p className={styles.disclaimer}>
           100% deterministic heuristic comparison against your profile preferences.
         </p>
@@ -114,7 +116,11 @@ export function JobFitExplainer({ fit, onOpenPreferences }: JobFitExplainerProps
           <button
             type="button"
             onClick={onOpenPreferences}
-            style={{ fontSize: 11, color: 'var(--color-brand-primary)', textDecoration: 'underline' }}
+            style={{
+              fontSize: 11,
+              color: 'var(--color-brand-primary)',
+              textDecoration: 'underline',
+            }}
           >
             Adjust preferences
           </button>

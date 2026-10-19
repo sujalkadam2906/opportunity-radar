@@ -54,16 +54,16 @@
 }
 
 .scoreHigh {
-  background-color: #ECFDF5;
+  background-color: #ecfdf5;
   color: #047857;
-  border-color: #A7F3D0;
+  border-color: #a7f3d0;
   font-weight: var(--font-semibold);
 }
 
 .scoreMid {
-  background-color: #FFFBEB;
-  color: #B45309;
-  border-color: #FDE68A;
+  background-color: #fffbeb;
+  color: #b45309;
+  border-color: #fde68a;
   font-weight: var(--font-semibold);
 }
 

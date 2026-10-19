@@ -16,7 +16,15 @@ export interface PreferencesModalProps {
   isSaving: boolean;
 }
 
-const COMMON_LOCATIONS = ['Bengaluru', 'Remote', 'Pune', 'Hyderabad', 'Gurugram', 'Mumbai', 'Chennai'];
+const COMMON_LOCATIONS = [
+  'Bengaluru',
+  'Remote',
+  'Pune',
+  'Hyderabad',
+  'Gurugram',
+  'Mumbai',
+  'Chennai',
+];
 
 export function PreferencesModal({
   isOpen,
@@ -99,12 +107,7 @@ export function PreferencesModal({
           <Button variant="secondary" size="sm" onClick={onClose}>
             Cancel
           </Button>
-          <Button
-            variant="primary"
-            size="sm"
-            onClick={handleSubmit}
-            disabled={isSaving}
-          >
+          <Button variant="primary" size="sm" onClick={handleSubmit} disabled={isSaving}>
             {isSaving ? 'Saving...' : 'Apply & Recalculate'}
           </Button>
         </>
@@ -149,8 +152,8 @@ export function PreferencesModal({
                   {mode === 'remote'
                     ? 'Remote'
                     : mode === 'hybrid'
-                    ? 'Hybrid'
-                    : 'On-site'}
+                      ? 'Hybrid'
+                      : 'On-site'}
                 </button>
               );
             })}
@@ -178,7 +181,9 @@ export function PreferencesModal({
         </div>
 
         <div className={styles.section}>
-          <label className={styles.sectionTitle}>Your Core Skills (Used in Match Heuristic)</label>
+          <label className={styles.sectionTitle}>
+            Your Core Skills (Used in Match Heuristic)
+          </label>
           <div className={styles.skillInputRow}>
             <Input
               value={newSkill}
@@ -218,7 +223,8 @@ export function PreferencesModal({
             Minimum Desired Annual Compensation (INR)
           </label>
           <span className={styles.salaryDisplay}>
-            ₹{(formState.minSalaryInr / 100000).toFixed(1)} LPA (₹{formState.minSalaryInr.toLocaleString('en-IN')})
+            ₹{(formState.minSalaryInr / 100000).toFixed(1)} LPA (₹
+            {formState.minSalaryInr.toLocaleString('en-IN')})
           </span>
           <input
             type="range"

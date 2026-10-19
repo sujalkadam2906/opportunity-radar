@@ -3,27 +3,14 @@ export type WorkMode = 'remote' | 'hybrid' | 'onsite';
 export type ExperienceLevel = 'internship' | 'entry' | 'junior' | 'mid';
 
 export type JobCategory =
-  | 'frontend'
-  | 'fullstack'
-  | 'backend'
-  | 'mobile'
-  | 'devops'
-  | 'qa';
+  'frontend' | 'fullstack' | 'backend' | 'mobile' | 'devops' | 'qa';
 
-export type ApplicationStatus =
-  | 'saved'
-  | 'applied'
-  | 'interview'
-  | 'offer'
-  | 'rejected';
+export type ApplicationStatus = 'saved' | 'applied' | 'interview' | 'offer' | 'rejected';
 
 export type FreshnessWindow = 'all' | '24h' | '3d' | '7d';
 
 export type SortOption =
-  | 'freshness_desc'
-  | 'freshness_asc'
-  | 'score_desc'
-  | 'salary_desc';
+  'freshness_desc' | 'freshness_asc' | 'score_desc' | 'salary_desc';
 
 export interface SalaryRange {
   min: number; // in INR
@@ -131,7 +118,4 @@ export type WebSocketStreamEvent =
   | { type: 'HEARTBEAT'; payload: { timestamp: string } };
 
 export type StreamConnectionStatus =
-  | 'connecting'
-  | 'connected'
-  | 'disconnected'
-  | 'offline_mode';
+  'connecting' | 'connected' | 'disconnected' | 'offline_mode';

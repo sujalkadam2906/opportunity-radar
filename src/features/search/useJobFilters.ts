@@ -31,7 +31,13 @@ export function useJobFilters() {
       setSearchParams(
         (prev) => {
           const next = new URLSearchParams(prev);
-          if (value === undefined || value === '' || value === defaultValue || value === 'all' || value === 0) {
+          if (
+            value === undefined ||
+            value === '' ||
+            value === defaultValue ||
+            value === 'all' ||
+            value === 0
+          ) {
             next.delete(key);
           } else {
             next.set(key, String(value));
@@ -44,10 +50,7 @@ export function useJobFilters() {
     [setSearchParams]
   );
 
-  const setQuery = useCallback(
-    (q: string) => updateParam('q', q, ''),
-    [updateParam]
-  );
+  const setQuery = useCallback((q: string) => updateParam('q', q, ''), [updateParam]);
   const setLocation = useCallback(
     (loc: string) => updateParam('loc', loc, 'all'),
     [updateParam]

@@ -1,14 +1,15 @@
-import { JobListing, UserPreferences, FitScoreBreakdown, ExperienceLevel } from '../../../types';
+import {
+  JobListing,
+  UserPreferences,
+  FitScoreBreakdown,
+  ExperienceLevel,
+} from '../../../types';
 
 /**
  * Normalizes skill strings for case-insensitive matching
  */
 export function normalizeSkill(skill: string): string {
-  return skill
-    .toLowerCase()
-    .trim()
-    .replace(/\.js$/, '')
-    .replace(/\s+/g, '');
+  return skill.toLowerCase().trim().replace(/\.js$/, '').replace(/\s+/g, '');
 }
 
 /**
@@ -60,9 +61,7 @@ export function calculateFitScore(
     };
   }
 
-  const normalizedUserSkills = new Set(
-    (preferences.skills || []).map(normalizeSkill)
-  );
+  const normalizedUserSkills = new Set((preferences.skills || []).map(normalizeSkill));
 
   // 1. Skill Overlap Calculation
   const matchedRequired: string[] = [];
@@ -107,10 +106,7 @@ export function calculateFitScore(
   if (preferredModes.includes(job.workMode)) {
     workModeScore = 20;
     workModeMatch = true;
-  } else if (
-    preferredModes.includes('hybrid') &&
-    job.workMode === 'remote'
-  ) {
+  } else if (preferredModes.includes('hybrid') && job.workMode === 'remote') {
     // Candidates open to hybrid are almost universally pleased with remote
     workModeScore = 18;
     workModeMatch = true;
@@ -125,8 +121,8 @@ export function calculateFitScore(
     locationMatch = true;
   } else {
     const jobLocNormalized = job.location.toLowerCase();
-    const matchesUserLoc = (preferences.preferredLocations || []).some(
-      (loc) => jobLocNormalized.includes(loc.toLowerCase().trim())
+    const matchesUserLoc = (preferences.preferredLocations || []).some((loc) =>
+      jobLocNormalized.includes(loc.toLowerCase().trim())
     );
     if (matchesUserLoc) {
       locationScore = 15;
@@ -136,10 +132,7 @@ export function calculateFitScore(
 
   const finalScore = Math.min(
     100,
-    Math.max(
-      0,
-      totalSkillScore + expResult.score + workModeScore + locationScore
-    )
+    Math.max(0, totalSkillScore + expResult.score + workModeScore + locationScore)
   );
 
   // Compose human-readable rationale
@@ -160,9 +153,7 @@ export function calculateFitScore(
   }
 
   const summary =
-    reasons.length > 0
-      ? reasons.join(' • ')
-      : 'Lower overlap with current preferences';
+    reasons.length > 0 ? reasons.join(' • ') : 'Lower overlap with current preferences';
 
   return {
     score: finalScore,

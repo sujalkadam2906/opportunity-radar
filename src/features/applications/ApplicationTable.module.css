@@ -34,10 +34,18 @@
   color: var(--color-text-primary);
 }
 
-.appliedStat { color: var(--color-status-applied-text); }
-.interviewStat { color: var(--color-status-interview-text); }
-.offerStat { color: var(--color-status-offer-text); }
-.rejectedStat { color: var(--color-status-rejected-text); }
+.appliedStat {
+  color: var(--color-status-applied-text);
+}
+.interviewStat {
+  color: var(--color-status-interview-text);
+}
+.offerStat {
+  color: var(--color-status-offer-text);
+}
+.rejectedStat {
+  color: var(--color-status-rejected-text);
+}
 
 .toolbar {
   display: flex;
@@ -151,6 +159,6 @@
 }
 
 .deleteBtn:hover {
-  color: #DC2626;
+  color: #dc2626;
   background-color: var(--color-surface-subtle);
 }

@@ -35,6 +35,8 @@ describe('JobFitExplainer Component', () => {
 
     expect(screen.getByText('Work mode aligns with your target')).toBeInTheDocument();
     expect(screen.getByText('Seniority band compatible')).toBeInTheDocument();
-    expect(screen.getByText('Location / Remote eligibility satisfied')).toBeInTheDocument();
+    expect(
+      screen.getByText('Location / Remote eligibility satisfied')
+    ).toBeInTheDocument();
   });
 });

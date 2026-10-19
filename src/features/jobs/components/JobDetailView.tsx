@@ -11,11 +11,7 @@ import { formatDate } from '../utils/dateUtils';
 import { JobFitExplainer } from './JobFitExplainer';
 import { Button } from '../../../components/ui/Button';
 import { Select } from '../../../components/ui/Select';
-import {
-  Bookmark,
-  CheckCircle,
-  ExternalLink,
-} from 'lucide-react';
+import { Bookmark, CheckCircle, ExternalLink } from 'lucide-react';
 import styles from './JobDetailView.module.css';
 
 export interface JobDetailViewProps {
@@ -97,7 +93,9 @@ export function JobDetailView({
           </div>
           <div className={styles.metaBlock}>
             <span className={styles.metaLabel}>Seniority</span>
-            <span className={styles.metaValue}>{formatExperience(job.experienceLevel)}</span>
+            <span className={styles.metaValue}>
+              {formatExperience(job.experienceLevel)}
+            </span>
           </div>
           <div className={styles.metaBlock}>
             <span className={styles.metaLabel}>Posted Date</span>
@@ -193,7 +191,12 @@ export function JobDetailView({
         <div className={styles.skillsContainer}>
           {job.requiredSkills.map((skill) => (
             <span key={skill} className={styles.skillBadge}>
-              <CheckCircle size={12} color="var(--color-brand-primary)" aria-hidden="true" style={{ display: 'inline', marginRight: 4 }} />
+              <CheckCircle
+                size={12}
+                color="var(--color-brand-primary)"
+                aria-hidden="true"
+                style={{ display: 'inline', marginRight: 4 }}
+              />
               {skill}
             </span>
           ))}
@@ -201,12 +204,18 @@ export function JobDetailView({
 
         {job.preferredSkills.length > 0 && (
           <>
-            <h4 className={styles.sectionHeading} style={{ fontSize: 'var(--text-sm)', marginTop: 8 }}>
+            <h4
+              className={styles.sectionHeading}
+              style={{ fontSize: 'var(--text-sm)', marginTop: 8 }}
+            >
               Preferred / Nice-to-Have Skills
             </h4>
             <div className={styles.skillsContainer}>
               {job.preferredSkills.map((skill) => (
-                <span key={skill} className={`${styles.skillBadge} ${styles.preferredBadge}`}>
+                <span
+                  key={skill}
+                  className={`${styles.skillBadge} ${styles.preferredBadge}`}
+                >
                   {skill}
                 </span>
               ))}
@@ -237,7 +246,9 @@ export function JobDetailView({
 
       {/* Demo Notice Box */}
       <div className={styles.demoBox} role="note">
-        <strong>Portfolio Demonstration Listing:</strong> {job.demoNotice} Track this opportunity locally to test bookmarks, funnel status transitions, and notes persistence.
+        <strong>Portfolio Demonstration Listing:</strong> {job.demoNotice} Track this
+        opportunity locally to test bookmarks, funnel status transitions, and notes
+        persistence.
       </div>
     </article>
   );

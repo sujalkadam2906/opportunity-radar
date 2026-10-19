@@ -40,12 +40,24 @@ export function App() {
           color: 'var(--color-text-muted)',
         }}
       >
-        <div style={{ maxWidth: 1400, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
+        <div
+          style={{
+            maxWidth: 1400,
+            margin: '0 auto',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: 8,
+          }}
+        >
           <span>
-            <strong>Opportunity Radar</strong> — Portfolio Engineering Demonstration (Indian Tech Ecosystem).
+            <strong>Opportunity Radar</strong> — Portfolio Engineering Demonstration
+            (Indian Tech Ecosystem).
           </span>
           <span>
-            Demonstration Dataset • IndexedDB Storage • Deterministic Fit Engine • WCAG 2.2 AA
+            Demonstration Dataset • IndexedDB Storage • Deterministic Fit Engine • WCAG
+            2.2 AA
           </span>
         </div>
       </footer>

@@ -1,7 +1,9 @@
 @import './tokens.css';
 
 /* Modern Box Sizing & CSS Reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -37,7 +39,12 @@ body {
 }
 
 /* Typography Defaults */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--color-text-primary);
   font-weight: var(--font-semibold);
   line-height: var(--leading-tight);
@@ -73,7 +80,9 @@ button:disabled {
   opacity: 0.6;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
@@ -82,7 +91,9 @@ input, select, textarea {
   background-color: var(--color-surface);
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: none;
   border-color: var(--color-brand-primary);
   box-shadow: 0 0 0 1px var(--color-brand-primary);
@@ -109,7 +120,9 @@ input:focus, select:focus, textarea:focus {
 
 /* Respect Reduced Motion Preferences */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

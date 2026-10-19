@@ -8,7 +8,10 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ interactive = false, selected = false, className = '', children, ...props }, ref) => {
+  (
+    { interactive = false, selected = false, className = '', children, ...props },
+    ref
+  ) => {
     return (
       <div
         ref={ref}

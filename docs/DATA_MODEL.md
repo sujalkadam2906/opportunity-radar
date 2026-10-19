@@ -1,7 +1,7 @@
 # Data Model Specification: Opportunity Radar
 
-*Role: Senior Frontend Engineer & UI Architect*  
-*Date: October 2026*
+_Role: Senior Frontend Engineer & UI Architect_  
+_Date: October 2026_
 
 ---
 
@@ -16,28 +16,15 @@ export type WorkMode = 'remote' | 'hybrid' | 'onsite';
 
 export type ExperienceLevel = 'internship' | 'entry' | 'junior' | 'mid';
 
-export type JobCategory = 
-  | 'frontend' 
-  | 'fullstack' 
-  | 'backend' 
-  | 'mobile' 
-  | 'devops' 
-  | 'qa';
+export type JobCategory =
+  'frontend' | 'fullstack' | 'backend' | 'mobile' | 'devops' | 'qa';
 
-export type ApplicationStatus = 
-  | 'saved' 
-  | 'applied' 
-  | 'interview' 
-  | 'offer' 
-  | 'rejected';
+export type ApplicationStatus = 'saved' | 'applied' | 'interview' | 'offer' | 'rejected';
 
 export type FreshnessWindow = 'all' | '24h' | '3d' | '7d';
 
-export type SortOption = 
-  | 'freshness_desc' 
-  | 'freshness_asc' 
-  | 'score_desc' 
-  | 'salary_desc';
+export type SortOption =
+  'freshness_desc' | 'freshness_asc' | 'score_desc' | 'salary_desc';
 ```
 
 ### 1.2 Company & Salary Models
@@ -157,7 +144,7 @@ export interface FilterState {
 ### 1.8 Real-Time Stream Event (`WebSocketEvent`)
 
 ```typescript
-export type WebSocketStreamEvent = 
+export type WebSocketStreamEvent =
   | { type: 'CONNECTED'; payload: { clientCount: number; timestamp: string } }
   | { type: 'NEW_JOB_OPPORTUNITY'; payload: JobListing }
   | { type: 'HEARTBEAT'; payload: { timestamp: string } };
@@ -170,15 +157,15 @@ export type WebSocketStreamEvent =
 Opportunity Radar uses an IndexedDB database named `OpportunityRadarDB` at version `1`:
 
 1. **Object Store `saved_jobs`:**
-   * Primary Key: `jobId` (string)
-   * Indices:
-     * `savedAt` (for chronological listing)
+   - Primary Key: `jobId` (string)
+   - Indices:
+     - `savedAt` (for chronological listing)
 2. **Object Store `applications`:**
-   * Primary Key: `id` (string, jobId)
-   * Indices:
-     * `status` (for quick filtering by stage: `applied`, `interview`, etc.)
-     * `updatedAt` (for reverse-chronological activity sorting)
+   - Primary Key: `id` (string, jobId)
+   - Indices:
+     - `status` (for quick filtering by stage: `applied`, `interview`, etc.)
+     - `updatedAt` (for reverse-chronological activity sorting)
 3. **Object Store `user_preferences`:**
-   * Primary Key: `id` (fixed key `'current_preferences'`)
+   - Primary Key: `id` (fixed key `'current_preferences'`)
 
 If IndexedDB is unavailable (e.g. strict security mode or private browsing quota restriction), the storage service transparently degrades to an in-memory and `localStorage` cache with a recorded diagnostic notice.

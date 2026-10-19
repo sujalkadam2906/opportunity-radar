@@ -18,7 +18,8 @@ export interface SavedPageProps {
 
 export function SavedPage({ onOpenPreferences }: SavedPageProps) {
   const outlet = useOutletContext<{ onOpenPreferences?: () => void }>();
-  const handleOpenPreferences = onOpenPreferences || outlet?.onOpenPreferences || (() => {});
+  const handleOpenPreferences =
+    onOpenPreferences || outlet?.onOpenPreferences || (() => {});
   const navigate = useNavigate();
   const { savedJobs, toggleSave, isSaved } = useSavedJobs();
   const { preferences } = usePreferences();
@@ -40,7 +41,8 @@ export function SavedPage({ onOpenPreferences }: SavedPageProps) {
         <div className={styles.titleArea}>
           <h1 className={styles.title}>Bookmarked Opportunities</h1>
           <p className={styles.subtitle}>
-            {savedJobs.length} {savedJobs.length === 1 ? 'listing' : 'listings'} saved locally in IndexedDB
+            {savedJobs.length} {savedJobs.length === 1 ? 'listing' : 'listings'} saved
+            locally in IndexedDB
           </p>
         </div>
       </div>

@@ -28,13 +28,38 @@ export function ApplicationsPage() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)', width: '100%' }}>
-      <header style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: 'var(--space-2)' }}>
-        <h1 style={{ fontSize: 'var(--text-xl)', fontWeight: 'var(--font-bold)', color: 'var(--color-text-primary)' }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 'var(--space-4)',
+        width: '100%',
+      }}
+    >
+      <header
+        style={{
+          borderBottom: '1px solid var(--color-border)',
+          paddingBottom: 'var(--space-2)',
+        }}
+      >
+        <h1
+          style={{
+            fontSize: 'var(--text-xl)',
+            fontWeight: 'var(--font-bold)',
+            color: 'var(--color-text-primary)',
+          }}
+        >
           Candidate Application Tracker
         </h1>
-        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', marginTop: 2 }}>
-          Manage your hiring pipeline, interview stages, notes, and records offline via IndexedDB.
+        <p
+          style={{
+            fontSize: 'var(--text-sm)',
+            color: 'var(--color-text-secondary)',
+            marginTop: 2,
+          }}
+        >
+          Manage your hiring pipeline, interview stages, notes, and records offline via
+          IndexedDB.
         </p>
       </header>
 

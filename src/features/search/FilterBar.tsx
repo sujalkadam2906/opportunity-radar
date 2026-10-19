@@ -72,10 +72,18 @@ export function FilterBar({
         {/* Freshness Window Control */}
         <div className={styles.filterGroup}>
           <span className={styles.groupLabel}>
-            <Clock size={12} style={{ display: 'inline', marginRight: 4 }} aria-hidden="true" />
+            <Clock
+              size={12}
+              style={{ display: 'inline', marginRight: 4 }}
+              aria-hidden="true"
+            />
             Freshness:
           </span>
-          <div className={styles.segmentedControl} role="group" aria-label="Freshness window filter">
+          <div
+            className={styles.segmentedControl}
+            role="group"
+            aria-label="Freshness window filter"
+          >
             {(
               [
                 { value: 'all', label: 'All' },
@@ -103,7 +111,11 @@ export function FilterBar({
         {/* Work Arrangement Control */}
         <div className={styles.filterGroup}>
           <span className={styles.groupLabel}>Work Mode:</span>
-          <div className={styles.segmentedControl} role="group" aria-label="Work arrangement filter">
+          <div
+            className={styles.segmentedControl}
+            role="group"
+            aria-label="Work arrangement filter"
+          >
             {(
               [
                 { value: 'all', label: 'All' },
@@ -144,7 +156,9 @@ export function FilterBar({
             <Select
               value={filters.experienceLevel}
               options={EXPERIENCE_OPTIONS}
-              onChange={(e) => onExperienceChange(e.target.value as ExperienceLevel | 'all')}
+              onChange={(e) =>
+                onExperienceChange(e.target.value as ExperienceLevel | 'all')
+              }
               aria-label="Filter by experience level"
             />
           </div>

@@ -29,15 +29,13 @@ describe('DiscoverPage Integration', () => {
     renderWithProviders(<DiscoverPage onOpenPreferences={vi.fn()} />);
 
     // Check search input exists
-    expect(
-      screen.getByPlaceholderText(/Search by title, skills/i)
-    ).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/Search by title, skills/i)).toBeInTheDocument();
 
     // Wait for jobs to load from jobService
     await waitFor(() => {
-      expect(
-        screen.getAllByText('Frontend Engineering Intern').length
-      ).toBeGreaterThan(0);
+      expect(screen.getAllByText('Frontend Engineering Intern').length).toBeGreaterThan(
+        0
+      );
     });
   });
 
@@ -46,9 +44,9 @@ describe('DiscoverPage Integration', () => {
     renderWithProviders(<DiscoverPage onOpenPreferences={vi.fn()} />);
 
     await waitFor(() => {
-      expect(
-        screen.getAllByText('Frontend Engineering Intern').length
-      ).toBeGreaterThan(0);
+      expect(screen.getAllByText('Frontend Engineering Intern').length).toBeGreaterThan(
+        0
+      );
     });
 
     const remoteBtn = screen.getByRole('button', { name: /^Remote$/i });
@@ -68,9 +66,9 @@ describe('DiscoverPage Integration', () => {
     renderWithProviders(<DiscoverPage onOpenPreferences={vi.fn()} />);
 
     await waitFor(() => {
-      expect(
-        screen.getAllByText('Frontend Engineering Intern').length
-      ).toBeGreaterThan(0);
+      expect(screen.getAllByText('Frontend Engineering Intern').length).toBeGreaterThan(
+        0
+      );
     });
 
     const saveBtn = screen.getByRole('button', {

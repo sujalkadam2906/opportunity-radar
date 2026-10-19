@@ -65,7 +65,9 @@ export const JobCard = React.memo(function JobCard({
             onToggleSave(job);
           }}
           className={styles.saveButton}
-          aria-label={isSaved ? `Remove ${job.title} from saved jobs` : `Save ${job.title}`}
+          aria-label={
+            isSaved ? `Remove ${job.title} from saved jobs` : `Save ${job.title}`
+          }
         >
           <Bookmark
             size={18}
@@ -90,9 +92,7 @@ export const JobCard = React.memo(function JobCard({
       </div>
 
       <div className={styles.badgeRow}>
-        <Badge variant={getScoreVariant(fit.score)}>
-          {fit.score}% Fit Match
-        </Badge>
+        <Badge variant={getScoreVariant(fit.score)}>{fit.score}% Fit Match</Badge>
         {job.isFresh && (
           <Badge variant="fresh">
             <Zap size={10} aria-hidden="true" />
@@ -101,13 +101,7 @@ export const JobCard = React.memo(function JobCard({
         )}
         <Badge variant="default">{formatExperience(job.experienceLevel)}</Badge>
         {applicationStatus && (
-          <Badge
-            variant={
-              applicationStatus === 'saved'
-                ? 'default'
-                : applicationStatus
-            }
-          >
+          <Badge variant={applicationStatus === 'saved' ? 'default' : applicationStatus}>
             Status: {applicationStatus.toUpperCase()}
           </Badge>
         )}

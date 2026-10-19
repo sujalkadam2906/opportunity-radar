@@ -78,9 +78,7 @@ export function filterAndSortJobs(
     if (filters.minSalary && filters.minSalary > 0) {
       // If yearly, compare max salary; if monthly, convert to approx annualized (x12)
       const annualizedMax =
-        job.salary.period === 'monthly'
-          ? job.salary.max * 12
-          : job.salary.max;
+        job.salary.period === 'monthly' ? job.salary.max * 12 : job.salary.max;
 
       if (annualizedMax < filters.minSalary) {
         return false;

@@ -43,10 +43,18 @@
   margin-top: 2px;
 }
 
-.success .iconWrapper { color: var(--color-fresh-text); }
-.error .iconWrapper { color: #DC2626; }
-.info .iconWrapper { color: var(--color-brand-primary); }
-.warning .iconWrapper { color: #D97706; }
+.success .iconWrapper {
+  color: var(--color-fresh-text);
+}
+.error .iconWrapper {
+  color: #dc2626;
+}
+.info .iconWrapper {
+  color: var(--color-brand-primary);
+}
+.warning .iconWrapper {
+  color: #d97706;
+}
 
 .content {
   flex: 1;
@@ -74,7 +82,9 @@
   height: 24px;
   border-radius: var(--radius-sm);
   color: var(--color-text-muted);
-  transition: color var(--transition-fast), background-color var(--transition-fast);
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast);
 }
 
 .closeButton:hover {

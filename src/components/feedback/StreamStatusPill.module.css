@@ -34,34 +34,47 @@
 }
 
 .connecting {
-  border-color: #FDE68A;
-  background-color: #FFFBEB;
-  color: #B45309;
+  border-color: #fde68a;
+  background-color: #fffbeb;
+  color: #b45309;
 }
 
 .connecting .indicator {
-  background-color: #F59E0B;
+  background-color: #f59e0b;
   animation: blink 1s infinite;
 }
 
-.disconnected, .offline_mode {
+.disconnected,
+.offline_mode {
   border-color: var(--color-border);
   background-color: var(--color-surface-subtle);
   color: var(--color-text-muted);
 }
 
-.disconnected .indicator, .offline_mode .indicator {
+.disconnected .indicator,
+.offline_mode .indicator {
   background-color: var(--color-text-muted);
 }
 
 @keyframes pulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(21, 128, 61, 0.5); }
-  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(21, 128, 61, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(21, 128, 61, 0); }
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(21, 128, 61, 0.5);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(21, 128, 61, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(21, 128, 61, 0);
+  }
 }
 
 @keyframes blink {
-  50% { opacity: 0.3; }
+  50% {
+    opacity: 0.3;
+  }
 }
 
 @media (max-width: 640px) {

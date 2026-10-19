@@ -71,10 +71,7 @@ class MemoryFallbackStorage {
         JSON.stringify(Array.from(this.applications.values()))
       );
       if (this.preferences) {
-        localStorage.setItem(
-          'op_fallback_preferences',
-          JSON.stringify(this.preferences)
-        );
+        localStorage.setItem('op_fallback_preferences', JSON.stringify(this.preferences));
       }
     } catch {
       // Ignore quota exceeded

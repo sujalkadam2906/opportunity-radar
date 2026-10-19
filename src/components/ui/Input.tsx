@@ -40,7 +40,11 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             </button>
           )}
         </div>
-        {error && <span className={styles.errorText} role="alert">{error}</span>}
+        {error && (
+          <span className={styles.errorText} role="alert">
+            {error}
+          </span>
+        )}
       </div>
     );
   }

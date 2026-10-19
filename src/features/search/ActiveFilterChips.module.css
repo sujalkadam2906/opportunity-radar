@@ -35,6 +35,6 @@
 }
 
 .removeBtn:hover {
-  color: #DC2626;
+  color: #dc2626;
   background-color: var(--color-surface-subtle);
 }

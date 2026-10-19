@@ -1,5 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { formatPostingAge, isWithinFreshness, formatDate } from '../../src/features/jobs/utils/dateUtils';
+import {
+  formatPostingAge,
+  isWithinFreshness,
+  formatDate,
+} from '../../src/features/jobs/utils/dateUtils';
 
 describe('dateUtils - Relative posting age and freshness window calculations', () => {
   const REF_TIME = new Date('2026-10-18T12:00:00.000Z').getTime();
